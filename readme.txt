@@ -1,12 +1,12 @@
----------------------------------------------------------
-  _======_
- / _====_/
- \ \____
-  \____ \
-       \ \
- ==____/ /
- \______/ 
----------------------------------------------------------
++--------------------------------------------------------+
+|  _=====_  _    _   _=====_  _    _   _______  __    __ |
+| / _===_/ | |  | | / _===_/ | \  | | |__   __| \ \  / / |
+| \ \___   | |  | | \ \___   |  \ | |    | |     \ \/ /  |
+|  \___ \  | |  | |  \___ \  | | \| |    | |      \  /   |
+|      \ \ | |  | |      \ \ | |\ \ |    | |      /  \   |
+| _____/ / | \__/ | _____/ / | | \  |  __| |__   / /\ \  |
+| \_____/   \____/  \_____/  |_|  \_| |_______| /_/  \_\ |
++--------------------------------------------------------+
 
 Developed by:
 
@@ -22,7 +22,7 @@ Work with them to complete specific tasks and repair your ship.
 [ACCESS CODE: Stw3rkUS]
 [ACCESS CODE ACCEPTED]
 Welcome, Captain [RED]. This information is for your eyes only, as to keep the rest of
-[SUSNIX] in a state of calm.
+[SUSNIX] from a state of panic.
 The destruction of the ship's functions seems to have been done by hand.
 ...a suspicious individual may have hopped on board, sowing destruction
 and hoping for the fall of the entire crew in their wake...
