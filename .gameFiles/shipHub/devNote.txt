@@ -1,0 +1,5 @@
+Contains every single location for the game.
+Upon moving here, a script will be run that displays where the player can go.
+You might notice a "visitedFlag" file--the idea is that something different will be shown upon entering a location for the first time.
+As such, any directory without one will play something once, and then something else every single time the player reenters it (should they feel they need to).
+Those obviously aren't gonna be there on a new game startup. Nothing's been implemented with them yet either.

@@ -1,0 +1,2 @@
+Everything contained in the players pockets.
+Soft links to this directory are placed in every location, so that the player always has access to this. 

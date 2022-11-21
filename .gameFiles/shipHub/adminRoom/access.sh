@@ -32,4 +32,5 @@ echo
 echo -e "[You can go back to the ship's main hub by typing ${RED}cd ..${NC}. This will change your working directory back to the previous directory.]"
 echo -e "[Of course, you can also use the ${RED}ls ${NC}command to see where else you can go from the hub.]"
 echo -e "[Similarly, typing ${RED}cd "directoryName" ${NC}can be used to change your working directory to any room you see in the hub.]"
+echo -e "[If you ever get lost, you can always use the ${RED}pwd ${NC}command to remind yourself where you are.]"
 echo
