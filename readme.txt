@@ -23,5 +23,5 @@ Work with them to complete specific tasks and repair your ship.
 
 Instructions:
 
-To start, type ". startScript.sh" in the console.
+To start, type "./startScript.sh" in the console.
 
