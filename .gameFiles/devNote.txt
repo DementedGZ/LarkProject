@@ -1,0 +1,2 @@
+This directory contains all the game's files. Basically everything's gonna be in here.
+The only things that aren't here are the readme and startup script.

@@ -1,0 +1,3 @@
+Contains every clue in the game.
+Clues are copied from this directory into the "foundClues" directory located in the player's pockets.
+Clues will likely be copied via a script, maybe running in the background, or a script necessary to do a task.

@@ -1,16 +1,33 @@
 #!/bin/bash
 
-RED='\033[0;31m'
-NC='\033[0m'
+retrn(){
+read -n 1 -s -r -p "Press any key to go back to the menu." input
+case "$input" in
+  *)
+    source startScript.sh
+    ;;
+esac
+}
 
 clear
+cat .gameFiles/title.txt
 echo
-echo "As you walk into the admin room, a bright light greets you on the console."
-echo "Welcome [UNKNOWN PASSENGER]. Make your identity known by entering your access code: "
-echo
-echo -e "You should have your ID stashed away in your pockets. See if you can ${RED}l${NC}i${RED}s${NC}t what's in them."
-echo -e "Of course, once you've found it, you'll need to actually look at it. The old Captain was always interested in ${RED}cat${NC}s. I wonder why that is..."
-echo "After that, you should be good to enter in the code. Just walk towards the console and type \"./access.sh\" to run the access script."
+echo "1) Start Game"
+echo "2) README"
+echo "3) Quit"
 echo
 
-cd .shipHub/adminRoom
+read -p "> " input
+case "$input" in
+  1)
+    source .gameFiles/dirs/beginning.sh
+    ;;
+  2)
+    clear
+    cat readme.txt
+    retrn
+    ;;
+  3)
+    return 0
+    ;;
+esac

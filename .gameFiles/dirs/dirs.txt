@@ -1,0 +1,18 @@
+Welcome to the ship's hub. Where will it be, Captain [RED]?
+
+Locations
+  AdminRoom (adminRoom)
+  Cafeteria (cafeteria)
+  Engine Room (engineRoom)
+  Medbay (medbay)
+  Navigation Room (navigationRoom)
+  Reactor (reactor)
+  Security Room (securityRoom)
+  Storage Room (storageRoom)
+  Weapons Room (weaponsRoom)
+
+Pockets
+  ID (pockets/ID)
+  Map (pockets/map)
+  Found Clues (pockets/foundClues)
+
