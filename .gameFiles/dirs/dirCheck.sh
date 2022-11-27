@@ -3,12 +3,19 @@
 # the alternative was making a pseudo command line. aka you could also just tell me to commit suicide
 
 count=0
+shipHub=~/LarkProject/.gameFiles/shipHub
 
 dirTest() {
-if [ "$currentDir" = ~/LarkProject/.gameFiles/shipHub -a "$count" = 0 ]
+if [ "$currentDir" = "$shipHub" -a "$count" = 0 ]
 then
   count=1
   source dirMovement.sh
+fi
+
+if [ "$currentDir" = "$shipHub"/adminRoom -a "$count" = 0 ]
+then
+  count=1
+  source adminRoom.sh
 fi
 }
 

@@ -1,11 +1,9 @@
 #!/bin/bash
 
-RED='\033[0;31m'
-NC='\033[0m'
+RED=$(tput setaf 1)
+NC=$(tput sgr0)
 
 cd .gameFiles/shipHub/adminRoom;
-touch .gameFiles/shipHub/adminRoom/visitedFlag #used for telling other scripts whether or not location has been visited
-touch .gameFiles/shipHub/visitedFlag #used for telling other scripts whether or not location has been visited
 
 clear
 echo
