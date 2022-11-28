@@ -12,4 +12,3 @@ then
 fi
 echo "Perhaps you can use this quiet time to grab ahold your bearings and review information."
 echo
-tput cup 5

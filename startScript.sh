@@ -32,6 +32,7 @@ case "$input" in
     ;;
   3)
     clear
+    cat .gameFiles/title.txt
     echo
     echo "Are you sure you would like to delete data? This will include any acquired clues. (y/n)"
     read confirm
@@ -52,6 +53,7 @@ case "$input" in
     esac
     ;;
   4)
+    clear
     return 0
     ;;
 esac

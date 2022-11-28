@@ -7,6 +7,13 @@ shipHub=~/LarkProject/.gameFiles/shipHub
 prevDir=f
 
 dirTest() {
+if [ "$currentDir" = ~/LarkProject/.gameFiles ] && [ "$count" = 0 ]
+then
+  count=1
+  prevDir="$currentDir"
+  visitCheck
+fi
+
 if [ "$currentDir" = "$shipHub" ] && [ "$count" = 0 ]
 then
   count=1
@@ -32,7 +39,11 @@ fi
 
 
 visitCheck() { #checks if there's a visit flag in current directory 
-if [ "$currentDir" = "$shipHub" ]
+if [ "$currentDir" = ~/LarkProject/.gameFiles ]
+then
+  ./oobCheck.sh
+  cdCheck
+elif [ "$currentDir" = "$shipHub" ]
 then
   ./dirMovement.sh
   cdCheck
