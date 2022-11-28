@@ -1,0 +1,20 @@
+#!/bin/bash
+answer="Purple and Blue"
+userInput=" "
+
+clear
+echo
+until [ "$userInput" = "$answer" ]
+do
+  read -p "What names did you end up making out? " userInput
+  if [ "$userInput" != "$answer" ]
+  then
+    echo 
+    echo "[ANSWER: $userInput]"
+    echo "[WRONG. PLEASE TRY AGAIN.]"
+    echo "[HINT: P___ and B___]"
+    echo
+  fi
+done
+echo " "
+echo "Purple and Blue. I'll be sure to keep them in mind."
