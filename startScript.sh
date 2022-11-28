@@ -20,7 +20,9 @@ echo
 read -p "> " input
 case "$input" in
   1)
-    source .gameFiles/dirs/beginning.sh
+    cd .gameFiles/dirs
+    ./dirCheck.sh &
+    source beginning.sh
     ;;
   2)
     clear

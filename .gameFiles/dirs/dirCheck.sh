@@ -4,19 +4,47 @@
 
 count=0
 shipHub=~/LarkProject/.gameFiles/shipHub
+prevDir=f
 
 dirTest() {
-if [ "$currentDir" = "$shipHub" -a "$count" = 0 ]
+if [ "$currentDir" = "$shipHub" ] && [ "$count" = 0 ]
 then
   count=1
-  source dirMovement.sh
+  prevDir=$currentDir
+  visitCheck
 fi
 
-if [ "$currentDir" = "$shipHub"/adminRoom -a "$count" = 0 ]
+if [ "$currentDir" = "$shipHub"/adminRoom ] && [ "$count" = 0 ]
 then
   count=1
-  source adminRoom.sh
+  prevDir=$currentDir
+  visitCheck
 fi
+}
+
+visitCheck() { #checks if there's a visit flag in current directory 
+if [ "$currentDir" = "$shipHub" ]
+then
+  ./dirMovement.sh
+  cdCheck
+fi
+
+if [ "$currentDir" = "$shipHub"/adminRoom ] && [ -f "$currentDir"/.visitedFlag ]
+then
+  ./adminRoom.sh
+  cdCheck
+else
+  touch "$currentDir"/.visitedFlag
+  cdCheck
+fi
+}
+
+cdCheck() { #checks if player is still in current directory
+while [ "$prevDir" = "$currentDir" ]
+do
+  currentDir=$(readlink -e /proc/$PPID/cwd)
+  count=0
+done
 }
 
 while true
