@@ -4,4 +4,4 @@
 
 clear
 cat dirs.txt
-tput cup 19 0
+tput cup 18

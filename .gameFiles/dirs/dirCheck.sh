@@ -10,34 +10,36 @@ dirTest() {
 if [ "$currentDir" = "$shipHub" ] && [ "$count" = 0 ]
 then
   count=1
-  prevDir=$currentDir
+  prevDir="$currentDir"
   visitCheck
 fi
-
 if [ "$currentDir" = "$shipHub"/adminRoom ] && [ "$count" = 0 ]
 then
   count=1
-  prevDir=$currentDir
+  prevDir="$shipHub"/adminRoom
   visitCheck
 fi
 }
+
+
 
 visitCheck() { #checks if there's a visit flag in current directory 
 if [ "$currentDir" = "$shipHub" ]
 then
   ./dirMovement.sh
   cdCheck
-fi
-
-if [ "$currentDir" = "$shipHub"/adminRoom ] && [ -f "$currentDir"/.visitedFlag ]
+elif [ "$currentDir" = "$shipHub"/adminRoom ] && [ -f "$currentDir"/.visitedFlag ]
 then
-  ./adminRoom.sh
+  ./adminRevisit.sh
   cdCheck
-else
+elif [ "$currentDir" = "$shipHub"/adminRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
+then
+  cdCheck
   touch "$currentDir"/.visitedFlag
-  cdCheck
 fi
 }
+
+
 
 cdCheck() { #checks if player is still in current directory
 while [ "$prevDir" = "$currentDir" ]
@@ -46,6 +48,8 @@ do
   count=0
 done
 }
+
+
 
 while true
 do

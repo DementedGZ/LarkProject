@@ -14,14 +14,15 @@ cat .gameFiles/title.txt
 echo
 echo "1) Start Game"
 echo "2) README"
-echo "3) Quit"
+echo "3) Delete Data"
+echo "4) Quit"
 echo
 
 read -p "> " input
 case "$input" in
   1)
     cd .gameFiles/dirs
-    ./dirCheck.sh &
+    . dirCheck.sh &
     source beginning.sh
     ;;
   2)
@@ -30,6 +31,27 @@ case "$input" in
     retrn
     ;;
   3)
+    clear
+    echo
+    echo "Are you sure you would like to delete data? This will include any acquired clues. (y/n)"
+    read confirm
+    case "$confirm" in
+      y)
+        echo
+        echo "Deleting previous data..."
+        .gameFiles/dirs/deleteData.sh
+        echo
+        retrn
+        ;;
+      n)
+        echo
+        retrn
+        ;;
+      *)
+        ;;
+    esac
+    ;;
+  4)
     return 0
     ;;
 esac

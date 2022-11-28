@@ -2,17 +2,17 @@ Welcome to the ship's hub. Where will it be, Captain [RED]?
 
 Locations
   AdminRoom (adminRoom)
-  Cafeteria (cafeteria)
-  Engine Room (engineRoom)
-  Medbay (medbay)
+  Cafeteria (cafeteria) -need task
+  Engine Room (engineRoom) -need task
+  Medbay (medbay) -need task
   Navigation Room (navigationRoom)
-  Reactor (reactor)
-  Security Room (securityRoom)
-  Storage Room (storageRoom)
-  Weapons Room (weaponsRoom)
+  Reactor (reactor) -need task
+  Security Room (securityRoom) -task almost delivered
+  Storage Room (storageRoom) -need task
+  Weapons Room (weaponsRoom) -need task
 
 Pockets
   ID (pockets/ID)
-  Map (pockets/map)
+  Map (pockets/map) -unimplemented
   Found Clues (pockets/foundClues)
 
