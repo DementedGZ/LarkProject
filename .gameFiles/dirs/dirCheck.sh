@@ -13,10 +13,18 @@ then
   prevDir="$currentDir"
   visitCheck
 fi
+
 if [ "$currentDir" = "$shipHub"/adminRoom ] && [ "$count" = 0 ]
 then
   count=1
   prevDir="$shipHub"/adminRoom
+  visitCheck
+fi
+
+if [ "$currentDir" = "$shipHub"/securityRoom ] && [ "$count" = 0 ]
+then
+  count=1
+  prevDir="$shipHub"/securityRoom
   visitCheck
 fi
 }
@@ -34,8 +42,17 @@ then
   cdCheck
 elif [ "$currentDir" = "$shipHub"/adminRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
 then
-  cdCheck
   touch "$currentDir"/.visitedFlag
+  cdCheck
+elif [ "$currentDir" = "$shipHub"/securityRoom ] && [ -f "$currentDir"/.visitedFlag ]
+then
+  ./securityRevisit.sh
+  cdCheck
+elif [ "$currentDir" = "$shipHub"/securityRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
+then
+  touch "$currentDir"/.visitedFlag
+  ./securityRoom.sh
+  cdCheck
 fi
 }
 

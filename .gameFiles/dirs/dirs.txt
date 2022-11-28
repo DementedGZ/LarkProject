@@ -7,7 +7,7 @@ Locations
   Medbay (medbay) -need task
   Navigation Room (navigationRoom)
   Reactor (reactor) -need task
-  Security Room (securityRoom) -task almost delivered
+  Security Room (securityRoom)
   Storage Room (storageRoom) -need task
   Weapons Room (weaponsRoom) -need task
 

@@ -10,4 +10,3 @@ echo "The security terminal's logs can't be removed as easily since all the data
 echo "All I need to do is to ${RED}check the logs${NC}, and we can see who's logged in since the ship was being sabotaged, and perhaps we can step closer to finding out who our little imposter is..."
 echo "Of course, they're sneaky. It's not like I'm gonna find 'em without any tricks... they had to have done SOMETHING to try and cover their ${RED}t${NC}r${RED}ail${NC}."
 echo
-tput cup 6

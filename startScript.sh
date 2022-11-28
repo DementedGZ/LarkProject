@@ -22,7 +22,7 @@ read -p "> " input
 case "$input" in
   1)
     cd .gameFiles/dirs
-    . dirCheck.sh &
+    ./dirCheck.sh &
     source beginning.sh
     ;;
   2)
