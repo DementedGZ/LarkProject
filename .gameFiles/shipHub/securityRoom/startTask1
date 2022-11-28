@@ -1,0 +1,13 @@
+#!/bin/bash
+clear
+echo "You enter the room and observe the items and surroundings."
+echo " "
+echo "In doing so, you find a computer currently displaying data showing the login and logout dates and times for all current users."
+echo " "
+echo "'Huh, this might be useful. Let me check to see what I could find.'"
+echo " "
+echo "Currently being displayed on the screen, you are greeted with this: "
+echo " "
+head -n 25 loginCatalog
+echo " "
+echo "Interesting, most of these entries are hidden for some reason. Doesn't help this document is so long it'll take me years to scroll through. Perhaps I can just check the tail-end of it instead."
