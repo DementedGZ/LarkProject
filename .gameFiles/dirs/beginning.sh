@@ -3,7 +3,7 @@
 RED=$(tput setaf 1)
 NC=$(tput sgr0)
 
-cd .gameFiles/shipHub/adminRoom;
+cd ../shipHub/adminRoom
 
 clear
 echo
