@@ -7,8 +7,12 @@ read -p "Based on all of the clues you have gathered thus far, who is the impost
 if [ "$userInput" != $finalImpostor ]
 	then
 		echo "If you've guessed wrong, there should be really cool dialog here but unfortunately i'm severely mentally challenged and can't write at all"
+		echo "This is where the script should delete the data so the user can restard if they please"
+		../../dirs/deleteData.sh
 	else
 		echo "If you've guessed right, there should be really cool dialog here but unfortunately i'm severely mentally challenged and can't write at all"
+		echo "This is where the script should delete the data so the user can restard if they please"
+		../../dirs/deleteData.sh
 fi
 
 
