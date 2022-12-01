@@ -7,6 +7,13 @@ shipHub=~/LarkProject/.gameFiles/shipHub
 prevDir=f
 
 dirTest() {
+if [ "$currentDir" = ~/LarkProject/.gameFiles ] && [ "$count" = 0 ]
+then
+  count=1
+  prevDir="$currentDir"
+  visitCheck
+fi
+
 if [ "$currentDir" = "$shipHub" ] && [ "$count" = 0 ]
 then
   count=1
@@ -27,32 +34,60 @@ then
   prevDir="$shipHub"/securityRoom
   visitCheck
 fi
+
+if [ "$currentDir" = "$shipHub"/electrical ] && [ "$count" = 0 ]
+then
+  count=1
+  prevDir="$shipHub"/electrical
+  visitCheck
+fi
 }
 
 
 
 visitCheck() { #checks if there's a visit flag in current directory 
-if [ "$currentDir" = "$shipHub" ]
+if [ "$currentDir" = ~/LarkProject/.gameFiles ]
+then
+  ./oobCheck.sh
+  cdCheck
+elif [ "$currentDir" = "$shipHub" ]
 then
   ./dirMovement.sh
   cdCheck
+# admin room
 elif [ "$currentDir" = "$shipHub"/adminRoom ] && [ -f "$currentDir"/.visitedFlag ]
 then
-  ./adminRevisit.sh
+  ./adminRoom.sh
   cdCheck
 elif [ "$currentDir" = "$shipHub"/adminRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
 then
   touch "$currentDir"/.visitedFlag
   cdCheck
+# security room
 elif [ "$currentDir" = "$shipHub"/securityRoom ] && [ -f "$currentDir"/.visitedFlag ]
 then
-  ./securityRevisit.sh
+  ./securityRoom.sh
   cdCheck
 elif [ "$currentDir" = "$shipHub"/securityRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
 then
-  touch "$currentDir"/.visitedFlag
   ./securityRoom.sh
+  touch "$currentDir"/.visitedFlag
   cdCheck
+# electrical
+elif [ "$currentDir" = "$shipHub"/electrical ] && [ -f "$currentDir"/.visitedFlag ]
+then
+  ./electrical.sh
+  cdCheck
+elif [ "$currentDir" = "$shipHub"/electrical ] && [ ! -f "$currentDir"/.visitedFlag ]
+then
+  ./electrical.sh
+  touch "$currentDir"/.visitedFlag
+  cdCheck
+# navigation room
+
+# cafeteria
+
+
 fi
 }
 
