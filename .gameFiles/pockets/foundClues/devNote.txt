@@ -1,0 +1,2 @@
+copy all of the clues that get found throughout the game from the clues folder into here.
+like use the cp command. optimally at the end of a task script that it gets put into here only when the task gets complete.

@@ -24,5 +24,6 @@ fi
 echo "The navigation room. Here we can chart all of our courses and send whatever data we need back to HQ."
 echo "On that note, I'll need to ${RED}transfer ${NC}that status report back. They've gotta know the situation here, and as soon as possible."
 echo "I've just gotta run the ${RED}data transfer program ${NC}and--"
-echo "Ah. Right. I need the password for the HQ's remote server to send it back. It should be here somewhere..."
+echo "Ah. Right. I need the password for the HQ's remote server to send it back. It should be in there somewhere..."
+echo "The main problem is that that file is pretty big. It's got pages of login info to send reports to other Captains... if only it could have ${RED}less ${NC}stuff, or a ${RED}filter${NC}."
 echo

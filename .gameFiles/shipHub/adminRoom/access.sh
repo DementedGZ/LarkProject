@@ -19,7 +19,7 @@ done
 
 cat ../../accessaccepted.txt
 cat ../../clues/adminClue
-cp ../../clues/adminClue ../../pockets/foundClues/adminClue
+cp ../../clues/adminClue pockets/foundClues/adminClue
 
 RED='\033[0;31m'
 BLUE='\033[0;34m'
