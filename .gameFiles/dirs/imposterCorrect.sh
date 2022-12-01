@@ -61,6 +61,33 @@ then
   cont
 fi
 
+if [ -f pockets/navigationClue ]
+then
+  echo "${RED}[RED]${NC}: The navigation room as well had something peculiar happen."
+  cont
+  echo "${RED}[RED]${NC}: There was a file transfer made there. Nothing out of the ordinary on its face."
+  cont
+  echo "${RED}[RED]${NC}: And before you get started, ${BLU}[BLUE]${NC}, yes, there was something interesting that happened there."
+  cont
+  echo "${RED}[RED]${NC}: A file transfer was made to a server other than [SkALd HQ]. And in addition to that--"
+  cont
+  echo "${BLU}[BLUE]${NC}: You found some hippy dippy clue that's supposed to link it to me, right?"
+  cont
+  echo "${RED}[RED]${NC}: I'll give you some credit here, ${BLU}[BLUE]${NC}. It's possible that this clue could link to three other members..."
+  cont
+  echo "${RED}[RED]${NC}: The name on the transfer had either an E, L, or both in it. That could link it to--"
+  cont
+  echo "${BLU}[BLUE]${NC}: Me, ${WHT}[WHITE]${NC}, ${YLW}[YELLOW]${NC}, or ${GRN}[GREEN]${NC}."
+  cont
+  echo "${YLW}[YELLOW]${NC}: Normally that would be bad but... a lot of the evidence is stacked against you here, ${BLU}[BLUE]${NC}. Occam's razor."
+  cont
+  echo "${WHT}[WHITE]${NC}: And all of your argumentation is making you even more suspicious, man. You really should just give it u--"
+  cont
+  echo "${BLU}[BLUE]${NC}: You both should quiet down when that's still proof linked to you..."
+  echo
+  cont
+fi
+
 if [ -f pockets/electricalClue ]
 then
   echo "${RED}[RED]${NC}: Electrical room. The wires--they couldn't have just exploded. They were cut."

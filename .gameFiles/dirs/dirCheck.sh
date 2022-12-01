@@ -41,6 +41,13 @@ then
   prevDir="$shipHub"/electrical
   visitCheck
 fi
+
+if [ "$currentDir" = "$shipHub"/navigationRoom ] && [ "$count" = 0 ]
+then
+  count=1
+  prevDir="$shipHub"/navigationRoom
+  visitCheck
+fi
 }
 
 
@@ -84,7 +91,15 @@ then
   touch "$currentDir"/.visitedFlag
   cdCheck
 # navigation room
-
+elif [ "$currentDir" = "$shipHub"/navigationRoom ] && [ -f "$currentDir"/.visitedFlag ]
+then
+  ./navigationRoom.sh
+  cdCheck
+elif [ "$currentDir" = "$shipHub"/navigationRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
+then
+  ./navigationRoom.sh
+  touch "$currentDir"/.visitedFlag
+  cdCheck
 # cafeteria
 
 
