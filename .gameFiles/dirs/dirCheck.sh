@@ -34,6 +34,13 @@ then
   prevDir="$shipHub"/securityRoom
   visitCheck
 fi
+
+if [ "$currentDir" = "$shipHub"/electrical ] && [ "$count" = 0 ]
+then
+  count=1
+  prevDir="$shipHub"/electrical
+  visitCheck
+fi
 }
 
 
@@ -47,23 +54,40 @@ elif [ "$currentDir" = "$shipHub" ]
 then
   ./dirMovement.sh
   cdCheck
+# admin room
 elif [ "$currentDir" = "$shipHub"/adminRoom ] && [ -f "$currentDir"/.visitedFlag ]
 then
-  ./adminRevisit.sh
+  ./adminRoom.sh
   cdCheck
 elif [ "$currentDir" = "$shipHub"/adminRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
 then
   touch "$currentDir"/.visitedFlag
   cdCheck
+# security room
 elif [ "$currentDir" = "$shipHub"/securityRoom ] && [ -f "$currentDir"/.visitedFlag ]
 then
-  ./securityRevisit.sh
+  ./securityRoom.sh
   cdCheck
 elif [ "$currentDir" = "$shipHub"/securityRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
 then
-  touch "$currentDir"/.visitedFlag
   ./securityRoom.sh
+  touch "$currentDir"/.visitedFlag
   cdCheck
+# electrical
+elif [ "$currentDir" = "$shipHub"/electrical ] && [ -f "$currentDir"/.visitedFlag ]
+then
+  ./electrical.sh
+  cdCheck
+elif [ "$currentDir" = "$shipHub"/electrical ] && [ ! -f "$currentDir"/.visitedFlag ]
+then
+  ./electrical.sh
+  touch "$currentDir"/.visitedFlag
+  cdCheck
+# navigation room
+
+# cafeteria
+
+
 fi
 }
 
