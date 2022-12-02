@@ -48,6 +48,13 @@ then
   prevDir="$shipHub"/navigationRoom
   visitCheck
 fi
+
+if [ "$currentDir" = "$shipHub"/medbayRoom ] && [ "$count" = 0 ]
+then 
+  count=1
+  prevDir="$shipHub"/medbayRoom
+  visitCheck
+fi
 }
 
 
@@ -100,6 +107,16 @@ then
   ./navigationRoom.sh
   touch "$currentDir"/.visitedFlag
   cdCheck
+# medbay room
+elif [ "$currentDir" = "$shipHub"/medbayRoom ] && [ -f "$currentDir"/.visitedFlag ]
+then
+  ./medbayRoom.sh
+  cdCheck
+elif [ "$currentDir" = "$shipHub"/medbayRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
+then
+  ./medbayRoom.sh
+  touch "$currentDir"/.visitedFlag
+  cdCheck
 # cafeteria
 
 
@@ -121,5 +138,4 @@ done
 while true
 do
   currentDir=$(readlink -e /proc/$PPID/cwd)
-  dirTest
 done
