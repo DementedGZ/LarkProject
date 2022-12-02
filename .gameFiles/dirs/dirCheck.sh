@@ -117,7 +117,6 @@ then
   ./medbayRoom.sh
   touch "$currentDir"/.visitedFlag
   cdCheck
-# cafeteria
 
 
 fi
@@ -138,4 +137,5 @@ done
 while true
 do
   currentDir=$(readlink -e /proc/$PPID/cwd)
+  dirTest
 done

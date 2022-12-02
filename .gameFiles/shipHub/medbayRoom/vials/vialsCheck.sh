@@ -10,6 +10,8 @@ then
     if [ -f ../../../clues/medbaycheck.txt ]
     then
       echo "Good Job here is a clue."
+      echo "The clus is in your pocket."
+      cp ../../../clues/medbayClue ../../pockets
     else
       echo "Good Job" 
       echo "Please go do your medical scan to get a clue."
