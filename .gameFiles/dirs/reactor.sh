@@ -13,7 +13,7 @@ then
   if [ ! -f ../pockets/foundClues/reactorClue ]
   then
     echo "Manifolds are still locked, sadly. Again, unlocking them is easy."
-    echo "Just need to ${RED}c${NC}o${RED}p${NC}y over whatever's in one console onto the other."
+    echo "Just need to ${RED}c${NC}o${RED}p${NC}y over the inputs in one console onto the other."
     echo
   fi
   echo "Perhaps you can use this quiet time to grab ahold your bearings and review information."
