@@ -1,6 +1,7 @@
 #!/bin/bash
 
 RED=$(tput setaf 1)
+BLU=$(tput setaf 4)
 NC=$(tput sgr0)
 
 linkcount=0
@@ -45,8 +46,8 @@ elif [ "$linkcount" == 4 ]
 then
   echo
   echo "Good. It looks like all of the wires have been linked correctly now."
-  echo
   cat ../../clues/electricalClue
   cp ../../clues/electricalClue pockets/foundClues/electricalClue
+  echo "[${RED}Electrical Clue ${NC}has been found! You can access it at any time via the ${BLU}foundClues ${NC}directory in your pocket.]"
   exit
 fi

@@ -112,5 +112,5 @@ echo "[TRANSFER COMPLETE. EXITING PROGRAM...]"
 cat ../../clues/navigationClue
 cp ../../clues/navigationClue pockets/foundClues/navigationClue
 
-echo "[${RED}navigationClue${NC}has been found! You can access it at any time via the ${BLU}foundClues ${NC}directory in your pocket.]"
+echo "[${RED}Navigation Clue${NC} has been found! You can access it at any time via the ${BLU}foundClues ${NC}directory in your pocket.]"
 echo

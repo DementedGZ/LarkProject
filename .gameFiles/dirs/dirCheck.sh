@@ -49,10 +49,17 @@ then
   visitCheck
 fi
 
-if [ "$currentDir" = "$shipHub"/medbayRoom ] && [ "$count" = 0 ]
+if [ "$currentDir" = "$shipHub"/medbay ] && [ "$count" = 0 ]
 then 
   count=1
-  prevDir="$shipHub"/medbayRoom
+  prevDir="$shipHub"/medbay
+  visitCheck
+fi
+
+if [ "$currentDir" = "$shipHub"/weaponsRoom ] && [ "$count" = 0 ]
+then
+  count=1
+  prevDir="$shipHub"/weaponsRoom
   visitCheck
 fi
 }
@@ -66,7 +73,8 @@ then
   cdCheck
 elif [ "$currentDir" = "$shipHub" ]
 then
-  ./dirMovement.sh
+  clear
+  cat ../dirs.txt
   cdCheck
 # admin room
 elif [ "$currentDir" = "$shipHub"/adminRoom ] && [ -f "$currentDir"/.visitedFlag ]
@@ -108,16 +116,25 @@ then
   touch "$currentDir"/.visitedFlag
   cdCheck
 # medbay room
-elif [ "$currentDir" = "$shipHub"/medbayRoom ] && [ -f "$currentDir"/.visitedFlag ]
+elif [ "$currentDir" = "$shipHub"/medbay ] && [ -f "$currentDir"/.visitedFlag ]
 then
   ./medbayRoom.sh
   cdCheck
-elif [ "$currentDir" = "$shipHub"/medbayRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
+elif [ "$currentDir" = "$shipHub"/medbay ] && [ ! -f "$currentDir"/.visitedFlag ]
 then
   ./medbayRoom.sh
   touch "$currentDir"/.visitedFlag
   cdCheck
-
+# weapons room
+elif [ "$currentDir" = "$shipHub"/weaponsRoom ] && [ -f "$currentDir"/.visitedFlag ]
+then
+  ./weaponsRoom.sh
+  cdCheck
+elif [ "$currentDir" = "$shipHub"/weaponsRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
+then
+  ./weaponsRoom.sh
+  touch "$currentDir"/.visitedFlag
+  cdCheck
 
 fi
 }

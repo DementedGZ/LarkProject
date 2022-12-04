@@ -5,6 +5,7 @@ userInput=" "
 userInput2=" "
 
 RED=$(tput setaf 1)
+BLU=$(tput setaf 4)
 NC=$(tput sgr0)
 
 clear
@@ -61,5 +62,5 @@ echo "[CORRUPTED DATA FIXED.]"
 cat ../../clues/securityClue
 cp ../../clues/securityClue pockets/securityClue
 
-echo "[${RED}securityClue${NC}has been found! You can access it at any time via the ${BLU}foundClues ${NC}directory in your pocket.]"
+echo "[${RED}Security Clue${NC}has been found! You can access it at any time via the ${BLU}foundClues ${NC}directory in your pocket.]"
 echo
