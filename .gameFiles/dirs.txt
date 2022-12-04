@@ -8,9 +8,9 @@ Locations           File Paths
   Medbay              (medbay)
   Navigation Room     (navigationRoom)
   Electrical          (electrical)
-  Reactor             (reactor) -task in dev
+  Reactor             (reactor)
   Security Room       (securityRoom)
-  Storage Room        (storageRoom) -task in dev
+  Storage Room        (storageRoom)
   Weapons Room        (weaponsRoom)
 
 Pockets

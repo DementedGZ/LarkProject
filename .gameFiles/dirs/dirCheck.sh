@@ -68,6 +68,20 @@ then
   prevDir="$shipHub"/cafeteria
   visitCheck
 fi
+
+if [ "$currentDir" = "$shipHub"/storageRoom ] && [ "$count" = 0 ]
+then
+  count=1
+  prevDir="$shipHub"/storageRoom
+  visitCheck
+fi
+
+if [ "$currentDir" = "$shipHub"/reactor ] && [ "$count" = 0 ]
+then
+  count=1
+  prevDir="$shipHub"/reactor
+  visitCheck
+fi
 }
 
 
@@ -149,6 +163,26 @@ then
 elif [ "$currentDir" = "$shipHub"/cafeteria ] && [ ! -f "$currentDir"/.visitedFlag ]
 then
   ./cafeteria.sh
+  touch "$currentDir"/.visitedFlag
+  cdCheck
+# storage room
+elif [ "$currentDir" = "$shipHub"/storageRoom ] && [ -f "$currentDir"/.visitedFlag ]
+then
+  ./storageRoom.sh
+  cdCheck
+elif [ "$currentDir" = "$shipHub"/storageRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
+then
+  ./storageRoom.sh
+  touch "$currentDir"/.visitedFlag
+  cdCheck
+# reactor
+elif [ "$currentDir" = "$shipHub"/reactor ] && [ -f "$currentDir"/.visitedFlag ]
+then
+  ./reactor.sh
+  cdCheck
+elif [ "$currentDir" = "$shipHub"/reactor ] && [ ! -f "$currentDir"/.visitedFlag ]
+then
+  ./reactor.sh
   touch "$currentDir"/.visitedFlag
   cdCheck
 
