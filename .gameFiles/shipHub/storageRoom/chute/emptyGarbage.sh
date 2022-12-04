@@ -10,7 +10,11 @@ then
 	cat ../../../clues/storageClue
 	cp ../../../clues/storageClue pockets/storageClue
 
+<<<<<<< HEAD
 	echo "[${RED}Security Clue${NC} has been found! You can access it at any time via the ${BLU}foundClues ${NC}directory in your pocket.]"
+=======
+	echo "[${RED}Security Clue${NC}has been found! You can access it at any time via the ${BLU}foundClues ${NC}directory in your pocket.]"
+>>>>>>> 56d51dc0e5e36fc6b13dbfd547128a4443f6df4f
 else
 	echo
 	echo "Wish I could stop here, but there are clearly still a few pieces of trash scattered around."
