@@ -60,7 +60,7 @@ echo "[FIXING DATA...] {|||||||||||||${RED}::${NC}}"; sleep 1
 echo "[CORRUPTED DATA FIXED.]"
 
 cat ../../clues/securityClue
-cp ../../clues/securityClue pockets/securityClue
+cp ../../clues/securityClue pockets/foundClues/securityClue
 
 echo "[${RED}Security Clue${NC}has been found! You can access it at any time via the ${BLU}foundClues ${NC}directory in your pocket.]"
 echo

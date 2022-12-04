@@ -1,6 +1,5 @@
 #!/bin/bash
 # uh basically checks which directory the player is in to help run scripts at the right time
-# the alternative was making a pseudo command line. aka you could also just tell me to commit suicide
 
 count=0
 shipHub=~/LarkProject/.gameFiles/shipHub
@@ -60,6 +59,13 @@ if [ "$currentDir" = "$shipHub"/weaponsRoom ] && [ "$count" = 0 ]
 then
   count=1
   prevDir="$shipHub"/weaponsRoom
+  visitCheck
+fi
+
+if [ "$currentDir" = "$shipHub"/cafeteria ] && [ "$count" = 0 ]
+then
+  count=1
+  prevDir="$shipHub"/cafeteria
   visitCheck
 fi
 }
@@ -133,6 +139,16 @@ then
 elif [ "$currentDir" = "$shipHub"/weaponsRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
 then
   ./weaponsRoom.sh
+  touch "$currentDir"/.visitedFlag
+  cdCheck
+# cafeteria
+elif [ "$currentDir" = "$shipHub"/cafeteria ] && [ -f "$currentDir"/.visitedFlag ]
+then
+  ./cafeteria.sh
+  cdCheck
+elif [ "$currentDir" = "$shipHub"/cafeteria ] && [ ! -f "$currentDir"/.visitedFlag ]
+then
+  ./cafeteria.sh
   touch "$currentDir"/.visitedFlag
   cdCheck
 

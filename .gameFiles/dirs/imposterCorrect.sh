@@ -239,15 +239,23 @@ echo "[${BLU}[BLUE]${NC} VOTES: ${RED}[RED]${NC}]"; sleep 1
 echo
 echo "[PROCEEDING WITH PROTOCOL, ${BLU}[BLUE]${NC} WILL BE EJECTED POSTHASTE.]"
 echo "[SUIT OF CREWMATE ${BLU}[BLUE]${NC} HAS BEEN RESTRAINED.]"
+echo
+cont
+clear
+echo
+echo "[${BLU}[BLUE]${NC} HAS BEEN EJECTED.]"
+echo "[${BLU}[BLUE]${NC} WAS THE IMPOSTER.]"
+echo
+echo "[Press any button to continue.]"
+echo
+cont
 
 cluecount=0
-for i in pockets/foundClues/*
+for i in "../pockets/foundClues/"*
 do
   [ $i -f ] && (( cluecount++ ))
 done
 
-clear
-echo
 if [ $cluecount < 9 ]
 then
   echo "You found $cluecount clues! There are still a few you could have collected."
@@ -255,35 +263,12 @@ then
   echo "If you would like to restart, you can run the startScript again and delete your data."
   echo
   echo "Thanks for playing!"
+  echo
 elif [ $cluecount = 9 ]
 then
   echo "You found all 9 clues! Great job!"
   echo "If you would like to restart, you can run the startScript again and delete your data."
   echo
   echo "Thanks for playing!"
+  echo
 fi
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
