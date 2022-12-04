@@ -8,7 +8,7 @@ then
   clear
   echo
   echo "You walk back into the security room. The light of the CCTV cameras is beaming back towards you."
-  if [ ! -f pockets/foundClues/securityClue ]
+  if [ ! -f ../pockets/foundClues/securityClue ]
   then
     echo "It could be good to take another ${RED}look at the server logs.${NC} It's possible there was a trick the imposter used to cover their ${RED}tails${NC}..."
   fi

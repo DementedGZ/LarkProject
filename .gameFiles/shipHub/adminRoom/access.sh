@@ -29,7 +29,7 @@ echo "You stash this thought away into the back of your mind. This may be a vita
 echo
 echo -e "[${RED}Admin Clue ${NC}has been found! You can access it at any time via the ${BLUE}foundClues ${NC}directory in your pocket.]"
 echo
-echo -e "[You can go back to the ship's main hub by typing ${RED}cd shipHub${NC}.]"
+echo -e "[You can go back to the ship's main hub by typing ${RED}cd ..${NC}.]"
 echo -e "[Similarly, typing ${RED}cd "directoryName" ${NC}can be used to change your working directory to any room you see in the hub.]"
 echo -e "[If you ever get lost, you can always use the ${RED}pwd ${NC}command to remind yourself where you are.]"
 echo

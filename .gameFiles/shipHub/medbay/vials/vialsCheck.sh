@@ -18,7 +18,7 @@ then
     echo "[CONTAIMNATED VIAL REMOVED.]"
     echo "[NO CONTAMINATED VIALS DETECTED.]"
     cat ../../../clues/medbayClue
-    cp ../../../clues/medbayClue ../../pockets
+    cp ../../../clues/medbayClue ../../../pockets/foundClues/medbayClue
     echo "[${RED}Medbay Clue ${NC}has been found! You can access it at any time via the ${BLU}foundClues ${NC}directory in your pocket.]"
   fi
 else

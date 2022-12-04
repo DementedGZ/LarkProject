@@ -34,6 +34,6 @@ else
   echo "[0 METEORS DETECTED.]"
   echo "[SHIP CONTINUING TO PROCEED ON CHARTED COURSE.]"
   cat ../../clues/weaponsClue
-  cp ../../clues/weaponsClue pockets/foundClues/weaponsClue
+  cp ../../clues/weaponsClue ../../pockets/foundClues/weaponsClue
   echo "[${RED}Weapons Clue ${NC}has been found! You can access it at any time via the ${BLU}foundClues ${NC}directory in your pocket.]"
 fi

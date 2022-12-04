@@ -11,7 +11,7 @@ then
   clear
   echo
   echo "You walk back into the weapons room."
-  if [ ! -f pockets/foundClues/weaponsClue ]
+  if [ ! -f ../pockets/foundClues/weaponsClue ]
   then
     echo "Somehow, walking out and then back in hasn't handled the 'big space rock' problem."
     echo "Aim through the scope, and ${RED}r${NC}e${RED}m${NC}ove those meteors."

@@ -8,7 +8,7 @@ then
   clear
   echo
   echo "You walk back into electrical."
-  if [ ! -f pockets/foundClues/electricalClue ]
+  if [ ! -f ../pockets/foundClues/electricalClue ]
   then
     echo "Yeah, surprisingly the wires didn't fix themselves."
     echo "Again, some of 'em all require some ${RED}hard ${NC} treatment, while others need to be treated ${RED}softly${NC}."
