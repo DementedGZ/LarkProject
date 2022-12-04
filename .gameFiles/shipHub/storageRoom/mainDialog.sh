@@ -1,6 +1,5 @@
 #!/bin/bash
 clear
-sleep 2
 echo "As you walk into the storage room, you find that everything in the room seems to have been hastily scattered."
 sleep 2
 echo "Among the mess, you find the trash chute guidelines posted on the wall which reads: "
