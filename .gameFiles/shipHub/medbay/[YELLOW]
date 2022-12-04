@@ -1,0 +1,47 @@
+#!/bin/bash
+
+RED=$(tput setaf 1)
+BLU=$(tput setaf 4)
+YLW=$(tput setaf 3)
+CYN=$(tput setaf 6)
+NC=$(tput sgr0)
+
+cont(){
+read -n 1 -s -r input
+case "$input" in
+  *)
+    ;;
+esac
+}
+
+clear
+echo
+echo "[You can press any button to advance the text forward by one line.]"
+echo
+echo "${YLW}[YELLOW]${NC}: Sup."
+cont
+echo "${RED}[RED]${NC}: Not much, ${YLW}[YELLOW]${NC}. Mind giving data for my status report?"
+cont
+echo "${YLW}[YELLOW]${NC}: Not like I'm gonna refuse, but I don't really have a choice, do I?"
+cont
+echo "${RED}[RED]${NC}: Guess not. Tasks and progress?"
+cont
+echo "${YLW}[YELLOW]${NC}: Conducting bioscans for decontamination purposes. Also need to sample the vials. No time for that, though."
+cont
+echo "${RED}[RED]${NC}: Understandable. Anything you've seen today?"
+cont
+echo "${YLW}[YELLOW]${NC}: I mean, nothing out of the ordinary. Today's our monthly scan, so everyone's been in and out."
+cont
+echo "${YLW}[YELLOW]${NC}: I asked ${CYN}[CYAN]${NC} and ${BLU}[BLUE]${NC} for help on vial inspection..."
+cont
+echo "${YLW}[YELLOW]${NC}: ...but apparently ${CYN}[CYAN]${NC} had to fix something with the reactor, and ${BLU}[BLUE]${NC} barely spent any time in here due to his other tasks."
+cont
+echo "${RED}[RED]${NC}: Alright. Have a good one. Keep up the good work."
+cont
+echo "${YLW}[YELLOW]${NC}: Yup."
+
+cat ../../clues/yellowClue
+cp ../../clues/yellowClue pockets/foundClues/yellowClue
+echo "[${RED}[YELLOW]'s Clue ${NC}has been found! You can access it at any time via the ${BLU}foundClues ${NC}directory in your pocket.]"
+
+exit

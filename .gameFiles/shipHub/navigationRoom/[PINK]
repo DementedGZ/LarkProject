@@ -1,0 +1,48 @@
+#!/bin/bash
+
+RED=$(tput setaf 1)
+BLU=$(tput setaf 4)
+PNK=$(tput setaf 5)
+NC=$(tput sgr0)
+
+cont(){
+read -n 1 -s -r input
+case "$input" in
+  *)
+    ;;
+esac
+}
+
+clear
+echo
+echo "[You can press any button to advance the text forward by one line.]"
+echo
+echo "${PNK}[PINK]${NC}: Hey hey hey, Captain..."
+cont
+echo "${RED}[RED]${NC}: You okay, ${PNK}[PINK]${NC}? Not as energetic as usual."
+cont
+echo "${PNK}[PINK]${NC}: Wow, you could tell? Not at all. What do you need?"
+cont
+echo "${RED}[RED]${NC}: Just status report stuff. How's the progress on your tasks?"
+cont
+echo "${PNK}[PINK]${NC}: Charting course and file transfer. The course WAS charted... but guess what. Some asshole completely rerouted us."
+cont
+echo "${PNK}[PINK]${NC}: Not sure if you noticed, but we're kinda right outside an asteroid belt. Musta happened when I left to deal with the file transfers."
+cont
+echo "${RED}[RED]${NC}: Yeah. There sure are many a space boulder right outside our windows."
+cont
+echo "${PNK}[PINK]${NC}: Mhm. So I'm working on routing us out right now."
+cont
+echo "${RED}[RED]${NC}: Gotcha. Anything else you've seen today?"
+cont
+echo "${PNK}[PINK]${NC}: God, I WISH! If I could find the member who screwed up our course I'd--"
+cont
+echo "${RED}[RED]${NC}: Okay, okay. Cool it. Focus on rerouting. You can do it."
+cont
+echo "${PNK}[PINK]${NC}: Of course I can. Later, Captain..."
+
+cat ../../clues/pinkClue
+cp ../../clues/pinkClue pockets/foundClues/pinkClue
+echo "[${RED}[PINK]'s Clue ${NC}has been found! You can access it at any time via the ${BLU}foundClues ${NC}directory in your pocket.]"
+
+exit
