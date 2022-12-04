@@ -7,16 +7,59 @@ shipHub=~/LarkProject/.gameFiles/shipHub
 prevDir=f
 
 dirTest() {
+if [ "$currentDir" = ~/LarkProject/.gameFiles ] && [ "$count" = 0 ]
+then
+  count=1
+  prevDir="$currentDir"
+  visitCheck
+fi
+
 if [ "$currentDir" = "$shipHub" ] && [ "$count" = 0 ]
 then
   count=1
   prevDir="$currentDir"
   visitCheck
 fi
+
 if [ "$currentDir" = "$shipHub"/adminRoom ] && [ "$count" = 0 ]
 then
   count=1
   prevDir="$shipHub"/adminRoom
+  visitCheck
+fi
+
+if [ "$currentDir" = "$shipHub"/securityRoom ] && [ "$count" = 0 ]
+then
+  count=1
+  prevDir="$shipHub"/securityRoom
+  visitCheck
+fi
+
+if [ "$currentDir" = "$shipHub"/electrical ] && [ "$count" = 0 ]
+then
+  count=1
+  prevDir="$shipHub"/electrical
+  visitCheck
+fi
+
+if [ "$currentDir" = "$shipHub"/navigationRoom ] && [ "$count" = 0 ]
+then
+  count=1
+  prevDir="$shipHub"/navigationRoom
+  visitCheck
+fi
+
+if [ "$currentDir" = "$shipHub"/medbay ] && [ "$count" = 0 ]
+then 
+  count=1
+  prevDir="$shipHub"/medbay
+  visitCheck
+fi
+
+if [ "$currentDir" = "$shipHub"/weaponsRoom ] && [ "$count" = 0 ]
+then
+  count=1
+  prevDir="$shipHub"/weaponsRoom
   visitCheck
 fi
 }
@@ -24,18 +67,75 @@ fi
 
 
 visitCheck() { #checks if there's a visit flag in current directory 
-if [ "$currentDir" = "$shipHub" ]
+if [ "$currentDir" = ~/LarkProject/.gameFiles ]
 then
-  ./dirMovement.sh
+  ./oobCheck.sh
   cdCheck
+elif [ "$currentDir" = "$shipHub" ]
+then
+  clear
+  cat ../dirs.txt
+  cdCheck
+# admin room
 elif [ "$currentDir" = "$shipHub"/adminRoom ] && [ -f "$currentDir"/.visitedFlag ]
 then
-  ./adminRevisit.sh
+  ./adminRoom.sh
   cdCheck
 elif [ "$currentDir" = "$shipHub"/adminRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
 then
-  cdCheck
   touch "$currentDir"/.visitedFlag
+  cdCheck
+# security room
+elif [ "$currentDir" = "$shipHub"/securityRoom ] && [ -f "$currentDir"/.visitedFlag ]
+then
+  ./securityRoom.sh
+  cdCheck
+elif [ "$currentDir" = "$shipHub"/securityRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
+then
+  ./securityRoom.sh
+  touch "$currentDir"/.visitedFlag
+  cdCheck
+# electrical
+elif [ "$currentDir" = "$shipHub"/electrical ] && [ -f "$currentDir"/.visitedFlag ]
+then
+  ./electrical.sh
+  cdCheck
+elif [ "$currentDir" = "$shipHub"/electrical ] && [ ! -f "$currentDir"/.visitedFlag ]
+then
+  ./electrical.sh
+  touch "$currentDir"/.visitedFlag
+  cdCheck
+# navigation room
+elif [ "$currentDir" = "$shipHub"/navigationRoom ] && [ -f "$currentDir"/.visitedFlag ]
+then
+  ./navigationRoom.sh
+  cdCheck
+elif [ "$currentDir" = "$shipHub"/navigationRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
+then
+  ./navigationRoom.sh
+  touch "$currentDir"/.visitedFlag
+  cdCheck
+# medbay room
+elif [ "$currentDir" = "$shipHub"/medbay ] && [ -f "$currentDir"/.visitedFlag ]
+then
+  ./medbayRoom.sh
+  cdCheck
+elif [ "$currentDir" = "$shipHub"/medbay ] && [ ! -f "$currentDir"/.visitedFlag ]
+then
+  ./medbayRoom.sh
+  touch "$currentDir"/.visitedFlag
+  cdCheck
+# weapons room
+elif [ "$currentDir" = "$shipHub"/weaponsRoom ] && [ -f "$currentDir"/.visitedFlag ]
+then
+  ./weaponsRoom.sh
+  cdCheck
+elif [ "$currentDir" = "$shipHub"/weaponsRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
+then
+  ./weaponsRoom.sh
+  touch "$currentDir"/.visitedFlag
+  cdCheck
+
 fi
 }
 
