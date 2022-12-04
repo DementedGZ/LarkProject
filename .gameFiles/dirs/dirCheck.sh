@@ -82,6 +82,13 @@ then
   prevDir="$shipHub"/reactor
   visitCheck
 fi
+
+if [ "$currentDir" = "$shipHub"/engineRoom ] && [ "$count" = 0 ]
+then
+  count=1
+  prevDir="$shipHub"/engineRoom
+  visitCheck
+fi
 }
 
 
@@ -185,7 +192,16 @@ then
   ./reactor.sh
   touch "$currentDir"/.visitedFlag
   cdCheck
-
+# engine room
+elif [ "$currentDir" = "$shipHub"/engineRoom ] && [ -f "$currentDir"/.visitedFlag ]
+then
+  ./engineRoom.sh
+  cdCheck
+elif [ "$currentDir" = "$shipHub"/engineRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
+then
+  ./engineRoom.sh
+  touch "$currentDir"/.visitedFlag
+  cdCheck
 fi
 }
 
