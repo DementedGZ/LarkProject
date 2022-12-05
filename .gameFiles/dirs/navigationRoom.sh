@@ -11,7 +11,7 @@ then
   clear
   echo
   echo "You walk back into the navigation room."
-  if [ ! -f pockets/foundClues/navigationClue ]
+  if [ ! -f ../pockets/foundClues/navigationClue ]
   then
     echo "I still need to ${RED}transfer ${NC}that status report back to HQ."
     echo "I'll need to find the password for the HQ's remote server to make any progress though."

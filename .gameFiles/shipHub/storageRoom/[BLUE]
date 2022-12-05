@@ -1,0 +1,47 @@
+#!/bin/bash
+
+RED=$(tput setaf 1)
+BLU=$(tput setaf 4)
+YLW=$(tput setaf 3)
+CYN=$(tput setaf 6)
+NC=$(tput sgr0)
+
+cont(){
+read -n 1 -s -r input
+case "$input" in
+  *)
+    ;;
+esac
+}
+
+clear
+echo
+echo "[You can press any button to advance the text forward by one line.]"
+echo
+echo "${BLU}[BLUE]${NC}: Good to see ya, Cap. What're you doin' down here?"
+cont
+echo "${RED}[RED]${NC}: Nice to see you as well, ${BLU}[BLUE]${NC}. Doing the rounds for my status report."
+cont
+echo "${BLU}[BLUE]${NC}: I gotcha. Whaddya need?"
+cont
+echo "${RED}[RED]${NC}: First on the agenda... tasks and progress."
+cont
+echo "${BLU}[BLUE]${NC}: Mostly just cleaning. The vents, O2 filters, floors, and I was just boutta get to the trash here. Also on refuel duty."
+cont
+echo "${RED}[RED]${NC}: Alright. Can I assume the rest is all clean and accounted for?"
+cont
+echo "${BLU}[BLUE]${NC}: Yessir, no problems on the cleaning side."
+cont
+echo "${RED}[RED]${NC}: Next up, anything interesting you've seen today?"
+cont
+echo "${BLU}[BLUE]${NC}: Well, a lil bit of everythin' Cap. I've been kinda all around to deal with the cleaning."
+cont
+echo "${RED}[RED]${NC}: I see. That'll be all then. Have a good one."
+cont
+echo "${BLU}[BLUE]${NC}: Of course, Cap. Keep yourself safe."
+
+cat ../../clues/blueClue
+cp ../../clues/blueClue pockets/foundClues/blueClue
+echo "[${RED}[BLUE]'s Clue ${NC}has been found! You can access it at any time via the ${BLU}foundClues ${NC}directory in your pocket.]"
+
+exit

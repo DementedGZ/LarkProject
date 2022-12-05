@@ -239,51 +239,40 @@ echo "[${BLU}[BLUE]${NC} VOTES: ${RED}[RED]${NC}]"; sleep 1
 echo
 echo "[PROCEEDING WITH PROTOCOL, ${BLU}[BLUE]${NC} WILL BE EJECTED POSTHASTE.]"
 echo "[SUIT OF CREWMATE ${BLU}[BLUE]${NC} HAS BEEN RESTRAINED.]"
-
-cluecount=0
-for i in pockets/foundClues/*
-do
-  [ $i -f ] && (( cluecount++ ))
-done
-
+echo
+cont
 clear
 echo
-if [ $cluecount < 9 ]
+echo "[${BLU}[BLUE]${NC} HAS BEEN EJECTED.]"
+echo "[${BLU}[BLUE]${NC} WAS THE IMPOSTER.]"
+echo
+cont
+echo "Later on, the ship was fully repaired. Having lost one crew member, and a once precious friend, the rest of [SuSnix] was left astray."
+cont
+echo "A status report was sent to [SkALd HQ] soon after the incident."
+cont
+echo "Other crews were not alerted to this incident--but those affected had been shook to their core."
+cont
+echo "But, they knew that sitting on it would achieve nothing. All they could do was move forward."
+echo
+echo "[Press any button to continue.]"
+echo
+cont
+
+cluecount=$(ls ../pockets/foundClues | wc -l)
+if [ $cluecount -lt 16 ]
 then
   echo "You found $cluecount clues! There are still a few you could have collected."
   echo "That being said, great job completing the game!"
   echo "If you would like to restart, you can run the startScript again and delete your data."
   echo
   echo "Thanks for playing!"
-elif [ $cluecount = 9 ]
+  echo
+elif [ $cluecount = 16 ]
 then
   echo "You found all 9 clues! Great job!"
   echo "If you would like to restart, you can run the startScript again and delete your data."
   echo
   echo "Thanks for playing!"
+  echo
 fi
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

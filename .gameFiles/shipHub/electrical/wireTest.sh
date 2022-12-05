@@ -48,6 +48,8 @@ then
   echo "Good. It looks like all of the wires have been linked correctly now."
   cat ../../clues/electricalClue
   cp ../../clues/electricalClue pockets/foundClues/electricalClue
+  ../../dirs/handbook.sh elec >> pockets/handbook
+  echo "[${RED}ln ${NC}has been added to your handbook! You can access it at any time via your pocket.]"
   echo "[${RED}Electrical Clue ${NC}has been found! You can access it at any time via the ${BLU}foundClues ${NC}directory in your pocket.]"
   exit
 fi

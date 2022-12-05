@@ -110,7 +110,8 @@ echo
 echo "[TRANSFER COMPLETE. EXITING PROGRAM...]"
 
 cat ../../clues/navigationClue
-cp ../../clues/navigationClue pockets/foundClues/navigationClue
-
+cp ../../clues/navigationClue ../../pockets/foundClues/navigationClue
+../../dirs/handbook.sh nav >> pockets/handbook
+echo "[${RED}scp ${NC}has been added to your handbook! You can access it at any time via your pocket.]"
 echo "[${RED}Navigation Clue${NC} has been found! You can access it at any time via the ${BLU}foundClues ${NC}directory in your pocket.]"
 echo

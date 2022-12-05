@@ -23,7 +23,7 @@ case "$input" in
   1)
     cd .gameFiles/dirs
     ./dirCheck.sh &
-    source beginning.sh
+    cd ../shipHub/adminRoom
     ;;
   2)
     clear

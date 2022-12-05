@@ -1,0 +1,48 @@
+#!/bin/bash
+
+RED=$(tput setaf 1)
+BLU=$(tput setaf 4)
+WHT=$(tput setaf 7)
+PNK=$(tput setaf 5)
+NC=$(tput sgr0)
+
+cont(){
+read -n 1 -s -r input
+case "$input" in
+  *)
+    ;;
+esac
+}
+
+clear
+echo
+echo "[You can press any button to advance the text forward by one line.]"
+echo
+echo "${WHT}[WHITE]${NC}: Oh, hey Captain! How goes it?"
+cont
+echo "${RED}[RED]${NC}: As it usually does, ${WHT}[WHITE]${NC}. I'm just collecting data for my status report."
+cont
+echo "${WHT}[WHITE]${NC}: Oh, gotcha. Anything I can help you with in regards to that?"
+cont
+echo "${RED}[RED]${NC}: Absolutely, young cadet. First, your tasks for today. Their completion?"
+cont
+echo "${WHT}[WHITE]${NC}: To organize the storage room as well as doling out rations for today, sir!"
+cont
+echo "${WHT}[WHITE]${NC}: I'm working on the rationing right now. About 80% done, I'd reckon? Haven't had time to organize storage yet though."
+cont
+echo "${RED}[RED]${NC}: Understood. The cafeteria has a lot of traffic. Can you report on what you've seen today?"
+cont
+echo "${WHT}[WHITE]${NC}: Surprisingly, not a ton of foot traffic today. Probably has to do with the current state of the ship." 
+cont 
+echo "${WHT}[WHITE]${NC}: I've been seeing ${BLU}[BLUE]${NC} come in and out a lot, though. Same for ${PNK}[PINK]${NC} as well, but not nearly as often." 
+cont
+echo "${RED}[RED]${NC}: I understand. Keep up the good work, cadet."
+cont
+echo "${WHT}[WHITE]${NC}: Sir yes sir!"
+echo
+
+cat ../../clues/whiteClue
+cp ../../clues/whiteClue pockets/foundClues/whiteClue
+echo "[${RED}[WHITE]'s Clue ${NC}has been found! You can access it at any time via the ${BLU}foundClues ${NC}directory in your pocket.]"
+
+exit
