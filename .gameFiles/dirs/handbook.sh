@@ -23,9 +23,12 @@ then
   echo
 elif [ "$1" = "nav" ]
 then
+  echo "less - the opposite of more! allows you to scroll throw a file's text"
+  echo "       less [file]"
+  echo
   echo "scp - protocol to transfer files between two servers"
   echo "      scp [hostname]:/home/[username]/[file] [target]:/home/[targeruser]/[file]"
-  echo
+  echo 
 elif [ "$1" = "elec" ]
 then
   echo "ln - makes symbolic links between files or directories"
@@ -46,7 +49,7 @@ then
   echo "& - used to run a process or command in the background"
   echo "    [process] &"
   echo
-  echo "CRTL-C - used to stop a currently running process"
+  echo "CTRL-C - used to stop a currently running process"
   echo
 elif [ "$1" = "weapons" ]
 then
