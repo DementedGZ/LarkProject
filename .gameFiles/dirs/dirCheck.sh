@@ -110,6 +110,7 @@ then
   cdCheck
 elif [ "$currentDir" = "adminRoom" ] && [ ! -f .visitedFlag ]
 then
+  ./adminRoom.sh
   touch "$shipHub"/adminRoom/.visitedFlag
   cdCheck
 # security room
