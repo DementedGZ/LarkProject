@@ -16,7 +16,8 @@ then
 	rm garbage1 garbage2 garbage3 garbage4
 	cat ../../../clues/storageClue
 	cp ../../../clues/storageClue ../../../pockets/foundClues/storageClue
-	
+	../../dirs/handbook.sh storage >> pockets/handbook
+	echo "[${RED}mv ${NC}has been added to your handbook! You can access it at any time via your pocket.]"	
 	echo "[${RED}Security Clue${NC} has been found! You can access it at any time via the ${BLU}foundClues ${NC}directory in your pocket.]"
 else
 	echo

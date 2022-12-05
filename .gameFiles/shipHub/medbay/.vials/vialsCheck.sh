@@ -19,6 +19,8 @@ then
     echo "[NO CONTAMINATED VIALS DETECTED.]"
     cat ../../../clues/medbayClue
     cp ../../../clues/medbayClue ../../../pockets/foundClues/medbayClue
+    ../../../dirs/handbook.sh medbay >> ../../../pockets/handbook
+    echo "[${RED}& and CRTL-C ${NC}have been added to your handbook! You can access it at any time via your pocket.]"
     echo "[${RED}Medbay Clue ${NC}has been found! You can access it at any time via the ${BLU}foundClues ${NC}directory in your pocket.]"
   fi
 else
