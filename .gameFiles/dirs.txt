@@ -15,7 +15,6 @@ Locations           File Paths
 
 Pockets
   ID                  (pockets/ID)
-  Map                 (pockets/map)
   Found Clues         (pockets/foundClues)
   Handbook            (pockets/handbook)
 

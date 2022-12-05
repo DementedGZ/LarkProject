@@ -125,10 +125,12 @@ then
 # electrical
 elif [ "$currentDir" = "$shipHub"/electrical ] && [ -f "$currentDir"/.visitedFlag ]
 then
+  cp ../copy/cut* $shipHub/electrical/wireEnd
   ./electrical.sh
   cdCheck
 elif [ "$currentDir" = "$shipHub"/electrical ] && [ ! -f "$currentDir"/.visitedFlag ]
 then
+  cp ../copy/cut* $shipHub/electrical/wireEnd
   ./electrical.sh
   touch "$currentDir"/.visitedFlag
   cdCheck
@@ -185,10 +187,12 @@ then
 # reactor
 elif [ "$currentDir" = "$shipHub"/reactor ] && [ -f "$currentDir"/.visitedFlag ]
 then
+  cp ../copy/input* $shipHub/reactor
   ./reactor.sh
   cdCheck
 elif [ "$currentDir" = "$shipHub"/reactor ] && [ ! -f "$currentDir"/.visitedFlag ]
 then
+  cp ../copy/input* $shipHub/reactor
   ./reactor.sh
   touch "$currentDir"/.visitedFlag
   cdCheck
