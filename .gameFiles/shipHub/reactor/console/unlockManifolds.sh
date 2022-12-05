@@ -16,7 +16,7 @@ then
 	
 	cat ../../../clues/reactorClue
 	cp ../../../clues/reactorClue pockets/foundClues/reactorClue
-	../../dirs/handbook.sh reactor >> pockets/handbook
+	../../../dirs/handbook.sh reactor >> ../pockets/handbook
 	echo "[${RED}cp ${NC}has been added to your handbook! You can access it at any time via your pocket.]"	
 	echo "[${RED}Reactor Clue ${NC}has been found! You can access it at any time via the ${BLU}foundClues ${NC}directory in your pocket.]"
 	echo

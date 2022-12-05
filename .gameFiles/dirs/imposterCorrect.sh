@@ -226,7 +226,8 @@ echo "${BLU}[BLUE]${NC}: Damnit..."
 cont
 clear
 echo
-echo "After a short while, all votes are cast."; sleep 1
+echo "After a short while, all votes are cast."
+cont
 echo
 echo "[VOTES INPUTTED:]"; sleep 1
 echo "[${RED}[RED]${NC} VOTES: ${BLU}[BLUE]${NC}]"; sleep 1
@@ -236,6 +237,8 @@ echo "[${PNK}[PINK]${NC} VOTES: ${BLU}[BLUE]${NC}]"; sleep 1
 echo "[${CYN}[CYAN]${NC} VOTES: ${BLU}[BLUE]${NC}]"; sleep 1
 echo "[${WHT}[WHITE]${NC} VOTES: ${BLU}[BLUE]${NC}]"; sleep 1
 echo "[${BLU}[BLUE]${NC} VOTES: ${RED}[RED]${NC}]"; sleep 1
+echo
+cont
 echo
 echo "[PROCEEDING WITH PROTOCOL, ${BLU}[BLUE]${NC} WILL BE EJECTED POSTHASTE.]"
 echo "[SUIT OF CREWMATE ${BLU}[BLUE]${NC} HAS BEEN RESTRAINED.]"

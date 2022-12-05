@@ -11,7 +11,7 @@ then
   if [ ! -f ../pockets/foundClues/engineClue ]
   then
     echo "The gas can's still just sitting there."
-    echo "Unironically, I actually did expect it to fill up while I was gone, but not a soul has ${RED}touch${NC}ed it while I was gone."
+    echo "Unironically, I actually did expect it to fill up while I was gone, but not a soul has ${RED}touch${NC}ed it since."
     echo 
   fi
   echo "Perhaps you can use this quiet time to grab ahold your bearings and review information."

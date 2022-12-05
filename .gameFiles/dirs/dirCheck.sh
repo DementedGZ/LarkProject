@@ -198,10 +198,12 @@ then
 # electrical
 elif [ "$currentDir" = "electrical" ] && [ -f .visitedFlag ]
 then
+  cp ../copy/cut* $shipHub/wireEnd
   ./electrical.sh
   cdCheck
 elif [ "$currentDir" = "electrical" ] && [ ! -f .visitedFlag ]
 then
+  cp ../copy/cut* $shipHub/wireEnd
   ./electrical.sh
   touch "$shipHub"/electrical/.visitedFlag
   cdCheck

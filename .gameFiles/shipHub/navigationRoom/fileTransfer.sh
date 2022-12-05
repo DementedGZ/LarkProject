@@ -12,6 +12,21 @@ NC=$(tput sgr0)
 clear
 echo
 
+echo "Are you sure you want to proceed? Make sure you know the hostname, transfer file, and target before starting! (y/n)"
+    read confirm
+    case "$confirm" in
+      y)
+        echo
+        ;;
+      n)
+        exit
+        ;;
+      *)
+        ;;
+    esac
+
+clear
+echo
 until [ "$userInput" = "$hostname" ]
 do
   read -p "[TO BEGIN TRANSFERRING DATA, INPUT HOST TO TRANSFER FROM:] " userInput
@@ -112,6 +127,6 @@ echo "[TRANSFER COMPLETE. EXITING PROGRAM...]"
 cat ../../clues/navigationClue
 cp ../../clues/navigationClue ../../pockets/foundClues/navigationClue
 ../../dirs/handbook.sh nav >> pockets/handbook
-echo "[${RED}scp ${NC}has been added to your handbook! You can access it at any time via your pocket.]"
+echo "[${RED}scp and less${NC}have been added to your handbook! You can access it at any time via your pocket.]"
 echo "[${RED}Navigation Clue${NC} has been found! You can access it at any time via the ${BLU}foundClues ${NC}directory in your pocket.]"
 echo

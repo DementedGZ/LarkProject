@@ -63,5 +63,5 @@ cat ../../clues/securityClue
 cp ../../clues/securityClue pockets/foundClues/securityClue
 ../../dirs/handbook.sh security >> pockets/handbook
 echo "[${RED}tail ${NC}has been added to your handbook! You can access it at any time via your pocket.]"
-echo "[${RED}Security Clue${NC}has been found! You can access it at any time via the ${BLU}foundClues ${NC}directory in your pocket.]"
+echo "[${RED}Security Clue${NC} has been found! You can access it at any time via the ${BLU}foundClues ${NC}directory in your pocket.]"
 echo

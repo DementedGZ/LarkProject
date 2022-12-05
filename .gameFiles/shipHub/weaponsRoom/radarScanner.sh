@@ -15,7 +15,7 @@ echo "[SCANNING SPACE 50M FROM SHIP...]"; sleep 1
 echo "[SCANNING SPACE 75M FROM SHIP...]"; sleep 1
 echo "[SCANNING SPACE 100M FROM SHIP...]"; sleep 1
 
-if [ $meteorcount -ge 0 ]
+if [ $meteorcount -gt 0 ]
 then
   echo
   echo "[$meteorcount METEORS DETECTED.]"
