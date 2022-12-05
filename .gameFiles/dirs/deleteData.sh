@@ -16,7 +16,7 @@ find "$shipHub/engineRoom/gasCan" ! -name ".keep" ! -name "gasCan" -delete
 
 rm -f $shipHub/medbay/inspectionResults.txt
 rm -f $shipHub/medbay/.inspectionCheck
-[ -f $shipHub/medbay/vials ] && mv -f $shipHub/medbay/vials $shipHub/medbay/.vials
+[ -d $shipHub/medbay/vials ] && mv -f $shipHub/medbay/vials $shipHub/medbay/.vials
 touch $shipHub/medbay/.vials/vial{1..5}
 
 touch $shipHub/weaponsRoom/turretScope/meteor{1..5}
