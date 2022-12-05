@@ -2,91 +2,91 @@
 # uh basically checks which directory the player is in to help run scripts at the right time
 
 count=0
-shipHub=~/LarkProject/.gameFiles/shipHub
+shipHub=../shipHub
 prevDir=f
 
 dirTest() {
-if [ "$currentDir" = ~/LarkProject/.gameFiles ] && [ "$count" = 0 ]
+if [ "$currentDir" = ".gameFiles" ] && [ "$count" = 0 ]
 then
   count=1
   prevDir="$currentDir"
   visitCheck
 fi
 
-if [ "$currentDir" = "$shipHub" ] && [ "$count" = 0 ]
+if [ "$currentDir" = "shipHub" ] && [ "$count" = 0 ]
 then
   count=1
   prevDir="$currentDir"
   visitCheck
 fi
 
-if [ "$currentDir" = "$shipHub"/adminRoom ] && [ "$count" = 0 ]
+if [ "$currentDir" = "adminRoom" ] && [ "$count" = 0 ]
 then
   count=1
-  prevDir="$shipHub"/adminRoom
+  prevDir="adminRoom"
   visitCheck
 fi
 
-if [ "$currentDir" = "$shipHub"/securityRoom ] && [ "$count" = 0 ]
+if [ "$currentDir" = "securityRoom" ] && [ "$count" = 0 ]
 then
   count=1
-  prevDir="$shipHub"/securityRoom
+  prevDir="securityRoom"
   visitCheck
 fi
 
-if [ "$currentDir" = "$shipHub"/electrical ] && [ "$count" = 0 ]
+if [ "$currentDir" = "navigationRoom" ] && [ "$count" = 0 ]
 then
   count=1
-  prevDir="$shipHub"/electrical
+  prevDir="navigationRoom"
   visitCheck
 fi
 
-if [ "$currentDir" = "$shipHub"/navigationRoom ] && [ "$count" = 0 ]
-then
-  count=1
-  prevDir="$shipHub"/navigationRoom
-  visitCheck
-fi
-
-if [ "$currentDir" = "$shipHub"/medbay ] && [ "$count" = 0 ]
+if [ "$currentDir" = "medbay" ] && [ "$count" = 0 ]
 then 
   count=1
-  prevDir="$shipHub"/medbay
+  prevDir="medbay"
   visitCheck
 fi
 
-if [ "$currentDir" = "$shipHub"/weaponsRoom ] && [ "$count" = 0 ]
+if [ "$currentDir" = "weaponsRoom" ] && [ "$count" = 0 ]
 then
   count=1
-  prevDir="$shipHub"/weaponsRoom
+  prevDir="weaponsRoom"
   visitCheck
 fi
 
-if [ "$currentDir" = "$shipHub"/cafeteria ] && [ "$count" = 0 ]
+if [ "$currentDir" = "cafeteria" ] && [ "$count" = 0 ]
 then
   count=1
-  prevDir="$shipHub"/cafeteria
+  prevDir="cafeteria"
   visitCheck
 fi
 
-if [ "$currentDir" = "$shipHub"/storageRoom ] && [ "$count" = 0 ]
+if [ "$currentDir" = "storageRoom" ] && [ "$count" = 0 ]
 then
   count=1
-  prevDir="$shipHub"/storageRoom
+  prevDir="storageRoom"
   visitCheck
 fi
 
-if [ "$currentDir" = "$shipHub"/reactor ] && [ "$count" = 0 ]
+if [ "$currentDir" = "reactor" ] && [ "$count" = 0 ]
 then
   count=1
-  prevDir="$shipHub"/reactor
+  prevDir="reactor"
   visitCheck
 fi
 
-if [ "$currentDir" = "$shipHub"/engineRoom ] && [ "$count" = 0 ]
+if [ "$currentDir" = "engineRoom" ] && [ "$count" = 0 ]
 then
   count=1
-  prevDir="$shipHub"/engineRoom
+  prevDir="engineRoom"
+  visitCheck
+fi
+
+if [ "$currentDir" = "electrical" ] && [ "$count" = 0 ]
+then
+  count=1
+  prevDir="electrical"
   visitCheck
 fi
 }
@@ -94,117 +94,115 @@ fi
 
 
 visitCheck() { #checks if there's a visit flag in current directory 
-if [ "$currentDir" = ~/LarkProject/.gameFiles ]
+if [ "$currentDir" = ".gameFiles" ]
 then
   ./oobCheck.sh
   cdCheck
-elif [ "$currentDir" = "$shipHub" ]
+elif [ "$currentDir" = "shipHub" ]
 then
   clear
   cat ../dirs.txt
   cdCheck
 # admin room
-elif [ "$currentDir" = "$shipHub"/adminRoom ] && [ -f "$currentDir"/.visitedFlag ]
+elif [ "$currentDir" = "adminRoom" ] && [ -f .visitedFlag ]
 then
   ./adminRoom.sh
   cdCheck
-elif [ "$currentDir" = "$shipHub"/adminRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
+elif [ "$currentDir" = "adminRoom" ] && [ ! -f .visitedFlag ]
 then
-  touch "$currentDir"/.visitedFlag
+  touch "$shipHub"/adminRoom/.visitedFlag
   cdCheck
 # security room
-elif [ "$currentDir" = "$shipHub"/securityRoom ] && [ -f "$currentDir"/.visitedFlag ]
+elif [ "$currentDir" = "securityRoom" ] && [ -f .visitedFlag ]
 then
   ./securityRoom.sh
   cdCheck
-elif [ "$currentDir" = "$shipHub"/securityRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
+elif [ "$currentDir" = "securityRoom" ] && [ ! -f .visitedFlag ]
 then
   ./securityRoom.sh
-  touch "$currentDir"/.visitedFlag
-  cdCheck
-# electrical
-elif [ "$currentDir" = "$shipHub"/electrical ] && [ -f "$currentDir"/.visitedFlag ]
-then
-  cp ../copy/cut* $shipHub/electrical/wireEnd
-  ./electrical.sh
-  cdCheck
-elif [ "$currentDir" = "$shipHub"/electrical ] && [ ! -f "$currentDir"/.visitedFlag ]
-then
-  cp ../copy/cut* $shipHub/electrical/wireEnd
-  ./electrical.sh
-  touch "$currentDir"/.visitedFlag
+  touch "$shipHub"/securityRoom/.visitedFlag
   cdCheck
 # navigation room
-elif [ "$currentDir" = "$shipHub"/navigationRoom ] && [ -f "$currentDir"/.visitedFlag ]
+elif [ "$currentDir" = "navigationRoom" ] && [ -f .visitedFlag ]
 then
   ./navigationRoom.sh
   cdCheck
-elif [ "$currentDir" = "$shipHub"/navigationRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
+elif [ "$currentDir" = "navigationRoom" ] && [ ! -f .visitedFlag ]
 then
   ./navigationRoom.sh
-  touch "$currentDir"/.visitedFlag
+  touch "$shipHub"/navigationRoom/.visitedFlag
   cdCheck
 # medbay room
-elif [ "$currentDir" = "$shipHub"/medbay ] && [ -f "$currentDir"/.visitedFlag ]
+elif [ "$currentDir" = "medbay" ] && [ -f .visitedFlag ]
 then
   ./medbayRoom.sh
   cdCheck
-elif [ "$currentDir" = "$shipHub"/medbay ] && [ ! -f "$currentDir"/.visitedFlag ]
+elif [ "$currentDir" = "medbay" ] && [ ! -f .visitedFlag ]
 then
   ./medbayRoom.sh
-  touch "$currentDir"/.visitedFlag
+  touch "$shipHub"/medbay/.visitedFlag
   cdCheck
 # weapons room
-elif [ "$currentDir" = "$shipHub"/weaponsRoom ] && [ -f "$currentDir"/.visitedFlag ]
+elif [ "$currentDir" = "weaponsRoom" ] && [ -f .visitedFlag ]
 then
   ./weaponsRoom.sh
   cdCheck
-elif [ "$currentDir" = "$shipHub"/weaponsRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
+elif [ "$currentDir" = "weaponsRoom" ] && [ ! -f .visitedFlag ]
 then
   ./weaponsRoom.sh
-  touch "$currentDir"/.visitedFlag
+  touch "$shipHub"/weaponsRoom/.visitedFlag
   cdCheck
 # cafeteria
-elif [ "$currentDir" = "$shipHub"/cafeteria ] && [ -f "$currentDir"/.visitedFlag ]
+elif [ "$currentDir" = "cafeteria" ] && [ -f .visitedFlag ]
 then
   ./cafeteria.sh
   cdCheck
-elif [ "$currentDir" = "$shipHub"/cafeteria ] && [ ! -f "$currentDir"/.visitedFlag ]
+elif [ "$currentDir" = "cafeteria" ] && [ ! -f .visitedFlag ]
 then
   ./cafeteria.sh
-  touch "$currentDir"/.visitedFlag
+  touch "$shipHub"/cafeteria/.visitedFlag
   cdCheck
 # storage room
-elif [ "$currentDir" = "$shipHub"/storageRoom ] && [ -f "$currentDir"/.visitedFlag ]
+elif [ "$currentDir" = "storageRoom" ] && [ -f .visitedFlag ]
 then
   ./storageRoom.sh
   cdCheck
-elif [ "$currentDir" = "$shipHub"/storageRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
+elif [ "$currentDir" = "storageRoom" ] && [ ! -f .visitedFlag ]
 then
   ./storageRoom.sh
-  touch "$currentDir"/.visitedFlag
+  touch "$shipHub"/storageRoom/.visitedFlag
   cdCheck
 # reactor
-elif [ "$currentDir" = "$shipHub"/reactor ] && [ -f "$currentDir"/.visitedFlag ]
+elif [ "$currentDir" = "reactor" ] && [ -f .visitedFlag ]
 then
   cp ../copy/input* $shipHub/reactor
   ./reactor.sh
   cdCheck
-elif [ "$currentDir" = "$shipHub"/reactor ] && [ ! -f "$currentDir"/.visitedFlag ]
+elif [ "$currentDir" = "reactor" ] && [ ! -f .visitedFlag ]
 then
   cp ../copy/input* $shipHub/reactor
   ./reactor.sh
-  touch "$currentDir"/.visitedFlag
+  touch "$shipHub"/reactor/.visitedFlag
   cdCheck
 # engine room
-elif [ "$currentDir" = "$shipHub"/engineRoom ] && [ -f "$currentDir"/.visitedFlag ]
+elif [ "$currentDir" = "engineRoom" ] && [ -f .visitedFlag ]
 then
   ./engineRoom.sh
   cdCheck
-elif [ "$currentDir" = "$shipHub"/engineRoom ] && [ ! -f "$currentDir"/.visitedFlag ]
+elif [ "$currentDir" = "engineRoom" ] && [ ! -f .visitedFlag ]
 then
   ./engineRoom.sh
-  touch "$currentDir"/.visitedFlag
+  touch "$shipHub"/engineRoom/.visitedFlag
+  cdCheck
+# electrical
+elif [ "$currentDir" = "electrical" ] && [ -f .visitedFlag ]
+then
+  ./electrical.sh
+  cdCheck
+elif [ "$currentDir" = "electrical" ] && [ ! -f .visitedFlag ]
+then
+  ./electrical.sh
+  touch "$shipHub"/electrical/.visitedFlag
   cdCheck
 fi
 }
@@ -214,7 +212,7 @@ fi
 cdCheck() { #checks if player is still in current directory
 while [ "$prevDir" = "$currentDir" ]
 do
-  currentDir=$(readlink -e /proc/$PPID/cwd)
+  currentDir=$(readlink /proc/$PPID/cwd | awk -F '/' '{print $NF}')
   count=0
 done
 }
@@ -223,6 +221,6 @@ done
 
 while true
 do
-  currentDir=$(readlink -e /proc/$PPID/cwd)
+  currentDir=$(readlink /proc/$PPID/cwd | awk -F '/' '{print $NF}')
   dirTest
 done

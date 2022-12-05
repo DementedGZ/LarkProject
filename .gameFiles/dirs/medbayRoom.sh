@@ -18,13 +18,14 @@ then
     echo "I should have access to the vial chamber as well."
     echo
     exit
-  elif [ ! -f ../shipHub/medbay/.inspectionCheck ]
+  elif [ -f ../shipHub/medbay/.inspectionCheck ]
   then
     echo "I've gotten authorization to go ahead with the inspection check."
-    echo "Like it said, I need to the program again ${RED}in the background ${NC}. That'll save a bunch of time in my investigation."
+    echo "Like it said, I need to the program again ${RED}in the background${NC}. That'll save a bunch of time in my investigation."
     echo "Then, once I've done that, I can come back in... 30 seconds or so, and check out whether or not the samples are okay."
     echo
   fi 
+  echo "I still need to get authorization to do the inspection check by going through the decontamination process."
   echo "Perhaps you can use this quiet time to grab ahold your bearings and review information."
   echo
   exit
