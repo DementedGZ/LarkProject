@@ -10,6 +10,7 @@ then
   echo "You walk back into the cafeteria."
   echo "Nothing out of place here. Before hitting that emergency meeting button, I can take some time to organize my information."
   echo
+  exit
 fi
 
 clear
