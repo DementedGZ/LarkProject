@@ -276,3 +276,6 @@ then
   echo "Thanks for playing!"
   echo
 fi
+
+PID=$(ps | grep dirCheck.sh | awk {'print $1'})
+kill $PID
